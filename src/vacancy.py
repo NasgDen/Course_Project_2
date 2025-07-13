@@ -5,6 +5,7 @@ class Vacancy:
     requirement: str # требования
     company: str # организация
     address: str # адрес организации
+    __slots__ = ("name", "url", "salary", "requirement", "company", "address")
 
     def __init__(self, name, url, salary, requirement, company, address):
         self.name = name
