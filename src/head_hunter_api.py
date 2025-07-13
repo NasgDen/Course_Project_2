@@ -4,12 +4,6 @@ import requests
 
 class HeadHunterAPI(BaseApiClass):
     """ Класс для работы с api.hh.ru """
-    name: str # наименование вакансии
-    url: str # ссылка на вакансию
-    salary: str # зарплата
-    company: str # организация
-    address: str # адрес организации
-
 
     def __init__(self):
         """ Инициализация атрибутов класса """
@@ -22,10 +16,16 @@ class HeadHunterAPI(BaseApiClass):
             "text": name,
             "period": 3
         }
-        return requests.get(url, params)
+        response = requests.get(url, params)
+        if response.status_code == 200:
+            return response
+        else:
+            return {}
 
     def get_vacancies(self, name):
-        return self.api_connect(name).json()
+        """ Получение вакансий с hh.ru в формате JSON """
+        result = self.api_connect(name).json()
+        return result
 
 
 
