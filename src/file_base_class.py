@@ -4,17 +4,18 @@ from abc import ABC, abstractmethod
 class FileBaseClass(ABC):
     """Базовый абстрактный класс, определяющий интерфейс работы с файлами"""
 
-    def write(self):
+    @abstractmethod
+    def add_vacancy(self):
         """ Метод записи данных в файл"""
         pass
 
-
-    def read(self):
+    @abstractmethod
+    def read_vacancy(self):
         """ Метод чтения данных из файла """
         pass
 
-
-    def delete(self):
+    @abstractmethod
+    def delete_vacancy(self):
         """ Метод удаления данных из файла"""
         pass
 

@@ -44,7 +44,7 @@ class Vacancy:
                     salary_to = ""
                 salary = f"{salary_from} - {salary_to}"
             else:
-                salary = 0
+                salary = "0"
             requirement = vacancy.get("snippet").get("requirement")
             responsibility = vacancy.get("snippet").get("responsibility")
             company = vacancy.get("employer").get("name")
@@ -56,3 +56,17 @@ class Vacancy:
                 cls(name, url, salary, requirement, responsibility, company, address)
             )
         return vacancies_list
+
+
+    def __lt__(self, other):
+        """ Метод сравнения атрибута класса 'зарплата' """
+        if isinstance(other, Vacancy):
+            salary_first = self.salary.split(" - ")
+            salary_second = other.salary.split(" - ")
+            avg_salary_first = sum(map(int,salary_first))/len(salary_first)
+            avg_salary_second = sum(map(int,salary_second)) / len(salary_second)
+            print(avg_salary_first)
+            print(avg_salary_second)
+            return avg_salary_first < avg_salary_second
+        else:
+            raise TypeError("Неверный тип данных")

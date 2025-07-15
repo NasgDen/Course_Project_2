@@ -12,6 +12,11 @@ def main():
     # Преобразование набора данных из JSON в список объектов
     vacancies_list = Vacancy.cast_to_object_list(hh_vacancies)
 
+
+    # for i in range(30):
+    #     print(f"{vacancies_list[i].salary}        {i}")
+
+
     # Пример работы контструктора класса с одной вакансией
     vacancy = Vacancy(
         "Python Developer",
