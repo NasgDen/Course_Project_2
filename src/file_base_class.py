@@ -5,6 +5,10 @@ class FileBaseClass(ABC):
     """Базовый абстрактный класс, определяющий интерфейс работы с файлами"""
 
     @abstractmethod
+    def write_vacancy(self, *args, **kwargs):
+        pass
+
+    @abstractmethod
     def add_vacancy(self):
         """ Метод записи данных в файл"""
         pass

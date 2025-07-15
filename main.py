@@ -1,4 +1,5 @@
 from src.head_hunter_api import HeadHunterAPI
+from src.json_sever import JSONSaver
 from src.vacancy import Vacancy
 
 
@@ -12,6 +13,9 @@ def main():
     # Преобразование набора данных из JSON в список объектов
     vacancies_list = Vacancy.cast_to_object_list(hh_vacancies)
 
+    # Сохранения списка вакансий в файл формата JSON
+    json_saver = JSONSaver()
+    json_saver.write_vacancy("data/vacancy.json", vacancies_list)
 
     # for i in range(30):
     #     print(f"{vacancies_list[i].salary}        {i}")

@@ -28,7 +28,8 @@ class Vacancy:
         self.address = address
 
     @classmethod
-    def cast_to_object_list(cls, vacancies):
+    def cast_to_object_list(cls, vacancies) -> list:
+        """ Метод создает список вакансий """
         vacancies_list = []
         for vacancy in vacancies.get("items"):
             name = vacancy.get("name")
@@ -58,7 +59,7 @@ class Vacancy:
         return vacancies_list
 
 
-    def __lt__(self, other):
+    def __lt__(self, other) -> bool:
         """ Метод сравнения атрибута класса 'зарплата' """
         if isinstance(other, Vacancy):
             salary_first = self.salary.split(" - ")
