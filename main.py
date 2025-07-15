@@ -17,6 +17,8 @@ def main():
     json_saver = JSONSaver()
     json_saver.write_vacancy("data/vacancy.json", vacancies_list)
 
+
+
     # for i in range(30):
     #     print(f"{vacancies_list[i].salary}        {i}")
 
@@ -31,6 +33,9 @@ def main():
         "Компания",
         "Адрес",
     )
+
+    # Добавление вакансии в файл формата JSON
+    json_saver.add_vacancy("data/vacancy.json", vacancy)
 
 
 if __name__ == "__main__":

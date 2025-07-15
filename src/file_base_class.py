@@ -9,7 +9,7 @@ class FileBaseClass(ABC):
         pass
 
     @abstractmethod
-    def add_vacancy(self):
+    def add_vacancy(self, *args, **kwargs):
         """ Метод записи данных в файл"""
         pass
 
