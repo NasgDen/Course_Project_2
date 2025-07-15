@@ -178,14 +178,5 @@
         "responsibility": "Анализировать и оценивать эффективность рекламных кампаний с помощью различных методик: A/B-тестирования, гео-тестирования, Causal Impact, diff-n-diff...",
         "company": "Aviasales.ru",
         "address": ""
-    },
-    {
-        "name": "Python Developer",
-        "url": "https://hh.ru/vacancy/123456",
-        "salary": "100 000-150 000 руб.",
-        "requirement": "Требования: опыт работы от 3 лет...",
-        "responsibility": "ответственность",
-        "company": "Компания",
-        "address": "Адрес"
     }
 ]

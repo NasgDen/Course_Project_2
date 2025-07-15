@@ -14,12 +14,12 @@ class FileBaseClass(ABC):
         pass
 
     @abstractmethod
-    def read_vacancy(self):
+    def read_vacancy(self, *args, **kwargs):
         """ Метод чтения данных из файла """
         pass
 
     @abstractmethod
-    def delete_vacancy(self):
+    def delete_vacancy(self, *args, **kwargs):
         """ Метод удаления данных из файла"""
         pass
 
