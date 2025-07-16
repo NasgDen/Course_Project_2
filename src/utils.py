@@ -64,4 +64,10 @@ def get_top_vacancies(vacancy: list[Vacancy], top_n):
         return vacancy[:top_n]
 
 
+def print_vacancies(vacancy: list[Vacancy]):
+    """ Вывод информации о вакансиях в консоль """
+
+    for vac in vacancy:
+        print(vac)
+
 
