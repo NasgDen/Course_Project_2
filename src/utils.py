@@ -33,3 +33,30 @@ def convert_object_to_dict(vacancies):
         to_dict["address"] = vacancies.address
         list_json.append(to_dict)
     return list_json
+
+
+def filter_vacancies(vacancy: list[Vacancy], filter_words: str):
+    """ Функция фильтрует список вакансий по заданым словам"""
+
+    vacancy_filter = filter(lambda x: filter_words in x.name, vacancy)
+    return list(vacancy_filter)
+
+
+def get_vacancies_by_salary(vacancy: list[Vacancy], salary_range: list):
+    """ Функция фильтрует список вакансий по диапазону зарплат"""
+    vacancy_filter = filter(lambda x: (salary_range[0] < (x.salary.split(" - "))[0]) and (salary_range[1] > (x.salary.split(" - "))[1]), vacancy)
+    # for i in vacancy_filter:
+    #     print(i)
+    return list(vacancy_filter)
+
+
+def sort_vacancies(vacancy: list[Vacancy]):
+    """ Функция сортирует список вакансий по минимальной зарплате по возрастанию"""
+
+    vacancy_sorted = sorted(vacancy, key=lambda p: p.salary.split(" - ")[0], reverse=False)
+    for i in vacancy_sorted:
+        print(i)
+    return vacancy_sorted
+
+
+

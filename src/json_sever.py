@@ -10,12 +10,12 @@ class JSONSaver(FileBaseClass):
     __filename: str
 
     def __init__(self, filename=PATH_TO_FILE):
-        self.__filename = os.path.join("data", filename)
+        self.__filename = os.path.join(filename)
         print(self.__filename)
 
-    @property
-    def filename(self):
-        return self.__filename
+    # @property
+    # def filename(self):
+    #     return self.__filename
 
     def write_vacancy(self, vacancies):
         """ Метод сохраняет список вакансий в файл формата JSON """

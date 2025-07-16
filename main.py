@@ -1,6 +1,7 @@
 from src.head_hunter_api import HeadHunterAPI
 from src.json_sever import JSONSaver
 from src.vacancy import Vacancy
+from src.utils import filter_vacancies, get_vacancies_by_salary, sort_vacancies
 
 
 def main():
@@ -27,12 +28,22 @@ def main():
         "Компания",
         "Адрес",
     )
-
+    print(vacancy)
     # Добавление вакансии в файл формата JSON
     # json_saver.add_vacancy(vacancy)
 
     # Удаление вакансий из файла формата JSON
     # json_saver.delete_vacancy(vacancy)
+
+    # Фильтрация вакансий
+    filter_words = input("Введите ключевые слова для фильтрации вакансий: ")
+    filtered_vacancies = filter_vacancies(vacancies_list, filter_words)
+
+    salary_range = input("Введите диапазон зарплат: ").split(" - ")
+    ranged_vacancies = get_vacancies_by_salary(filtered_vacancies, salary_range)
+
+    # Сортировка вакансий
+    sorted_vacancies = sort_vacancies(ranged_vacancies)
 
 if __name__ == "__main__":
     main()

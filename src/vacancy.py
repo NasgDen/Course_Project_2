@@ -27,6 +27,17 @@ class Vacancy:
         self.company = company
         self.address = address
 
+
+    def __str__(self):
+        return (f"""Наименование :{self.name}
+Ссылка на вакансию: {self.url}
+Диапазон зарплат: {self.salary}
+Требования: {self.requirement}
+Обязанности: {self.responsibility}
+Компания: {self.company}
+Адрес: {self.address} """)
+
+
     @classmethod
     def cast_to_object_list(cls, vacancies) -> list:
         """ Метод создает список вакансий """
@@ -45,7 +56,7 @@ class Vacancy:
                     salary_to = ""
                 salary = f"{salary_from} - {salary_to}"
             else:
-                salary = "0"
+                salary = "0 - 0"
             requirement = vacancy.get("snippet").get("requirement")
             responsibility = vacancy.get("snippet").get("responsibility")
             company = vacancy.get("employer").get("name")
