@@ -15,13 +15,7 @@ def main():
 
     # Сохранения списка вакансий в файл формата JSON
     json_saver = JSONSaver()
-    # json_saver.write_vacancy("data/vacancy.json", vacancies_list)
-
-
-
-    # for i in range(30):
-    #     print(f"{vacancies_list[i].salary}        {i}")
-
+    json_saver.write_vacancy(vacancies_list)
 
     # Пример работы контструктора класса с одной вакансией
     vacancy = Vacancy(
@@ -35,10 +29,10 @@ def main():
     )
 
     # Добавление вакансии в файл формата JSON
-    # json_saver.add_vacancy("data/vacancy.json", vacancy)
+    # json_saver.add_vacancy(vacancy)
 
     # Удаление вакансий из файла формата JSON
-    json_saver.delete_vacancy("data/vacancy.json", vacancy)
+    # json_saver.delete_vacancy(vacancy)
 
 if __name__ == "__main__":
     main()
