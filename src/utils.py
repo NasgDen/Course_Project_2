@@ -39,7 +39,7 @@ def filter_vacancies(vacancy: list[Vacancy], filter_words: str):
     """ Функция фильтрует список вакансий по заданым словам"""
 
     vacancy_filter = filter(lambda x: filter_words in x.name, vacancy)
-    return list(vacancy_filter)
+    return vacancy_filter
 
 
 def get_vacancies_by_salary(vacancy: list[Vacancy], salary_range: list):
@@ -47,16 +47,21 @@ def get_vacancies_by_salary(vacancy: list[Vacancy], salary_range: list):
     vacancy_filter = filter(lambda x: (salary_range[0] < (x.salary.split(" - "))[0]) and (salary_range[1] > (x.salary.split(" - "))[1]), vacancy)
     # for i in vacancy_filter:
     #     print(i)
-    return list(vacancy_filter)
+    return vacancy_filter
 
 
 def sort_vacancies(vacancy: list[Vacancy]):
-    """ Функция сортирует список вакансий по минимальной зарплате по возрастанию"""
+    """ Функция сортирует список вакансий по минимальной зарплате по убыванию"""
 
-    vacancy_sorted = sorted(vacancy, key=lambda p: p.salary.split(" - ")[0], reverse=False)
-    for i in vacancy_sorted:
-        print(i)
+    vacancy_sorted = sorted(vacancy, key=lambda p: p.salary.split(" - ")[0], reverse=True)
+    print(f"Найдено и отсортировано вакансий: {len(vacancy_sorted)} шт.")
     return vacancy_sorted
+
+def get_top_vacancies(vacancy: list[Vacancy], top_n):
+    if len(vacancy) < top_n:
+        return vacancy
+    else:
+        return vacancy[:top_n]
 
 
 

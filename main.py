@@ -1,7 +1,7 @@
 from src.head_hunter_api import HeadHunterAPI
 from src.json_sever import JSONSaver
 from src.vacancy import Vacancy
-from src.utils import filter_vacancies, get_vacancies_by_salary, sort_vacancies
+from src.utils import filter_vacancies, get_vacancies_by_salary, sort_vacancies, get_top_vacancies
 
 
 def main():
@@ -44,6 +44,11 @@ def main():
 
     # Сортировка вакансий
     sorted_vacancies = sort_vacancies(ranged_vacancies)
+
+    # Вывод top список вакансий
+    top_n = int(input("Введите количество вакансий для вывода в топ N: "))
+    top_vacancies = get_top_vacancies(sorted_vacancies, top_n)
+    print(top_vacancies)
 
 if __name__ == "__main__":
     main()
