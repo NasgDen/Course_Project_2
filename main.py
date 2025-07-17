@@ -39,7 +39,7 @@ def main():
     filter_words = input("Введите ключевые слова для фильтрации вакансий: ").split()
     filtered_vacancies = filter_vacancies(vacancies_list, filter_words)
 
-    salary_range = input("Введите диапазон зарплат: ").split(" - ")
+    salary_range = input("Введите диапазон зарплат: ").replace(" ", "").split("-")
     ranged_vacancies = get_vacancies_by_salary(filtered_vacancies, salary_range)
 
     # Сортировка вакансий

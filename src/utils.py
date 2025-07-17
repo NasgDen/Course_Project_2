@@ -46,9 +46,8 @@ def filter_vacancies(vacancy: list[Vacancy], filter_words: list[str]) -> list[Va
 
 def get_vacancies_by_salary(vacancy: list[Vacancy], salary_range: list):
     """ Функция фильтрует список вакансий по диапазону зарплат"""
-    vacancy_filter = filter(lambda x: (salary_range[0] < (x.salary.split(" - "))[0]) and (salary_range[1] > (x.salary.split(" - "))[1]), vacancy)
-    # for i in vacancy_filter:
-    #     print(i)
+    if len(salary_range) != 1 and salary_range[0].isdigit() and salary_range[1].isdigit():
+        vacancy_filter = filter(lambda x: (salary_range[0] <= (x.salary.split(" - "))[0]) and (salary_range[1] >= (x.salary.split(" - "))[1]), vacancy)
     return vacancy_filter
 
 
