@@ -30,8 +30,17 @@ class JSONSaver(FileBaseClass):
         data_json = self.read_vacancy()
 
         list_json = convert_object_to_dict(vacancy)
-        data_json.extend(list_json)
-        print(data_json)
+
+        index = 0
+        for vac in list_json:
+            for data in data_json:
+                if data.get("url") == vac.get("url"):
+                    index += 1
+                    print("Вакансия не добавлена. Данная вакансия уже существует")
+        if index == 0:
+            data_json.extend(list_json)
+            print("Вакансия добавлена")
+            print(data_json)
 
         with open(self.__filename, mode="w", encoding="utf-8") as file:
             json.dump(data_json, file, indent=4, ensure_ascii=False)

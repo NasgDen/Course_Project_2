@@ -27,6 +27,15 @@
         "address": ""
     },
     {
+        "name": "Senior Frontend-разработчик (React)",
+        "url": "https://hh.ru/vacancy/122957297",
+        "salary": "0 - 0",
+        "requirement": "Диплом о высшем образовании в технической сфере. Бэкграунд работы с frontend от 3 до 5 лет. Владение стеком технологий JavaScript...",
+        "responsibility": "Разрабатывать и обеспечивать бесперебойное функционирование инфраструктуры тестирования. Вовлекаться в процессы планирования спринтов, осуществлять декомпозицию и своевременную реализацию поставленных задач. ",
+        "company": "Orion soft",
+        "address": ""
+    },
+    {
         "name": "Главный специалист Отдела контроля реализации проекта",
         "url": "https://hh.ru/vacancy/122935237",
         "salary": "0 - 0",
@@ -43,6 +52,15 @@
         "responsibility": "Collaborate with the design team to develop and implement user interfaces for web applications. - Build responsive and scalable web pages...",
         "company": "DEEPEN",
         "address": "Ташкент, улица Ифтихор, 1/1"
+    },
+    {
+        "name": "Backend-разработчик (Python)",
+        "url": "https://hh.ru/vacancy/122948356",
+        "salary": "0 - 0",
+        "requirement": "Уверенные знания <highlighttext>Python</highlighttext>. Опыт разработки web-приложений и REST API (FastAPI, Flask, Django и др.). Опыт работы с базами данных...",
+        "responsibility": "Разрабатывать и поддерживать backend-сервисы и REST API. Проектировать архитектуру компонентов и участвовать в выборе технических решений. Интегрировать backend с...",
+        "company": "1AK-GROUP",
+        "address": "Минск, улица Льва Толстого, 10"
     },
     {
         "name": "Python Developer",
@@ -63,13 +81,13 @@
         "address": "Красногорск, бульвар Строителей, 4к1"
     },
     {
-        "name": "Backend-разработчик (Python)",
-        "url": "https://hh.ru/vacancy/122948356",
-        "salary": "0 - 0",
-        "requirement": "Уверенные знания <highlighttext>Python</highlighttext>. Опыт разработки web-приложений и REST API (FastAPI, Flask, Django и др.). Опыт работы с базами данных...",
-        "responsibility": "Разрабатывать и поддерживать backend-сервисы и REST API. Проектировать архитектуру компонентов и участвовать в выборе технических решений. Интегрировать backend с...",
-        "company": "1AK-GROUP",
-        "address": "Минск, улица Льва Толстого, 10"
+        "name": "Python-разработчик",
+        "url": "https://hh.ru/vacancy/122954683",
+        "salary": "195000 - 250000",
+        "requirement": "Коммерческий опыт разработки веб-сервисов - от 3-х лет. Уверенный опыт работы с <highlighttext>Python</highlighttext> 3, asyncio (async/await), веб-фреймоворками...",
+        "responsibility": "Разработка backend для сервисов компании (мобильные приложения, веб).",
+        "company": "FRESH AUTO",
+        "address": ""
     },
     {
         "name": "QA Engineer / Тестировщик",
@@ -90,15 +108,6 @@
         "address": "Москва, 1-я улица Ямского Поля, 19с1"
     },
     {
-        "name": "QA Engineer",
-        "url": "https://hh.ru/vacancy/122784336",
-        "salary": "0 - 0",
-        "requirement": "Опыт планирования работ по тестированию, контроля выполнения задач и формирования отчетности. Знание <highlighttext>Python</highlighttext>/Java для автоматизации тестирования. Опыт автоматизации тестирования...",
-        "responsibility": "Анализ продуктовых требований на полноту, непротиворечивость и тестируемость, в том числе участие в уточнении требований. Разработка тест-кейсов и тест...",
-        "company": "Московский метрополитен",
-        "address": "Москва, улица Ивана Франко"
-    },
-    {
         "name": "QA engineer (Middle/Middle+)",
         "url": "https://hh.ru/vacancy/122838005",
         "salary": "0 - 0",
@@ -117,15 +126,6 @@
         "address": "None"
     },
     {
-        "name": "Python-разработчик",
-        "url": "https://hh.ru/vacancy/122790180",
-        "salary": "0 - 0",
-        "requirement": "Уверенное владение <highlighttext>Python</highlighttext> (3+). Опыт разработки веб-приложений. SQL, Git, Linux на продвинутом уровне. Понимание алгоритмов и структур данных. ",
-        "responsibility": "Разработка клиент-серверных веб-приложений. Проектирование и оптимизация баз данных. Реализация микросервисной архитектуры. Написание автоматизированных тестов. Работа с асинхронными приложениями. ",
-        "company": "Justice IT",
-        "address": ""
-    },
-    {
         "name": "QA Manual",
         "url": "https://hh.ru/vacancy/122859716",
         "salary": "0 - 0",
@@ -136,21 +136,12 @@
     },
     {
         "name": "Python-разработчик",
-        "url": "https://hh.ru/vacancy/122954683",
-        "salary": "195000 - 250000",
-        "requirement": "Коммерческий опыт разработки веб-сервисов - от 3-х лет. Уверенный опыт работы с <highlighttext>Python</highlighttext> 3, asyncio (async/await), веб-фреймоворками...",
-        "responsibility": "Разработка backend для сервисов компании (мобильные приложения, веб).",
-        "company": "FRESH AUTO",
-        "address": ""
-    },
-    {
-        "name": "Тестировщик веб-приложений",
-        "url": "https://hh.ru/vacancy/120800634",
+        "url": "https://hh.ru/vacancy/122790180",
         "salary": "0 - 0",
-        "requirement": "Опыт E2E-тестирования от 2+ лет. Знание <highlighttext>Python</highlighttext> + Pytest, TypeScript + Playwright. Опыт тестирования API (REST...",
-        "responsibility": "Проверка критичных пользовательских сценариев. Автоматизация тестирования: написание тестов на <highlighttext>Python</highlighttext> (Pytest) и TypeScript (Playwright). Интеграция тестов в CI/CD (GitHub...",
-        "company": "Цикада",
-        "address": "Москва, улица Бутлерова, 17"
+        "requirement": "Уверенное владение <highlighttext>Python</highlighttext> (3+). Опыт разработки веб-приложений. SQL, Git, Linux на продвинутом уровне. Понимание алгоритмов и структур данных. ",
+        "responsibility": "Разработка клиент-серверных веб-приложений. Проектирование и оптимизация баз данных. Реализация микросервисной архитектуры. Написание автоматизированных тестов. Работа с асинхронными приложениями. ",
+        "company": "Justice IT",
+        "address": ""
     },
     {
         "name": "Тестировщик",
@@ -160,6 +151,15 @@
         "responsibility": "Проведение ручного (и/или автоматизированного) тестирования web-приложений и/или 1С. Составление тест-кейсов, чек-листов, баг-репортов. ",
         "company": "Технокап",
         "address": "Казань, улица Лукницкого, 2"
+    },
+    {
+        "name": "Тестировщик веб-приложений",
+        "url": "https://hh.ru/vacancy/120800634",
+        "salary": "0 - 0",
+        "requirement": "Опыт E2E-тестирования от 2+ лет. Знание <highlighttext>Python</highlighttext> + Pytest, TypeScript + Playwright. Опыт тестирования API (REST...",
+        "responsibility": "Проверка критичных пользовательских сценариев. Автоматизация тестирования: написание тестов на <highlighttext>Python</highlighttext> (Pytest) и TypeScript (Playwright). Интеграция тестов в CI/CD (GitHub...",
+        "company": "Цикада",
+        "address": "Москва, улица Бутлерова, 17"
     },
     {
         "name": "Python-разработчик",
@@ -178,5 +178,14 @@
         "responsibility": "Реализацией алгоритмов на <highlighttext>Python</highlighttext> в соответствии с техническим заданием. Написанием и оптимизацией SQL-запросов. Исправлением багов и доработкой существующих решений.",
         "company": "DNS Технологии",
         "address": "Владивосток, проспект 100-летия Владивостока, 155к3"
+    },
+    {
+        "name": "Python Developer",
+        "url": "https://hh.ru/vacancy/1234567",
+        "salary": "10000000000-150000 руб.",
+        "requirement": "Требования: опыт работы от 3 лет...",
+        "responsibility": "ответственность",
+        "company": "Компания",
+        "address": "Адрес"
     }
 ]

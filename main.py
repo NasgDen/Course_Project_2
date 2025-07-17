@@ -23,16 +23,17 @@ def main():
     # Пример работы контструктора класса с одной вакансией
     vacancy = Vacancy(
         "Python Developer",
-        "https://hh.ru/vacancy/123456",
-        "100 000-150 000 руб.",
+        "https://hh.ru/vacancy/1234567",
+        "10000000000-150000 руб.",
         "Требования: опыт работы от 3 лет...",
         "ответственность",
         "Компания",
         "Адрес",
     )
-    print(vacancy)
+
     # Добавление вакансии в файл формата JSON
-    # json_saver.add_vacancy(vacancy)
+    json_saver.add_vacancy(vacancy)
+    json_saver.add_vacancy(vacancy)
 
     # Удаление вакансий из файла формата JSON
     # json_saver.delete_vacancy(vacancy)
