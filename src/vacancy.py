@@ -27,20 +27,18 @@ class Vacancy:
         self.company = company
         self.address = address
 
-
     def __str__(self):
-        return (f"""Наименование :{self.name}
+        return f"""Наименование :{self.name}
 Ссылка на вакансию: {self.url}
 Диапазон зарплат: {self.salary}
 Требования: {self.requirement}
 Обязанности: {self.responsibility}
 Компания: {self.company}
-Адрес: {self.address} """)
-
+Адрес: {self.address} """
 
     @classmethod
     def cast_to_object_list(cls, vacancies) -> list:
-        """ Метод создает список вакансий """
+        """Метод создает список вакансий"""
         vacancies_list = []
         for vacancy in vacancies.get("items"):
             name = vacancy.get("name")
@@ -69,14 +67,13 @@ class Vacancy:
             )
         return vacancies_list
 
-
     def __lt__(self, other) -> bool:
-        """ Метод сравнения атрибута класса 'зарплата' """
+        """Метод сравнения атрибута класса 'зарплата'"""
         if isinstance(other, Vacancy):
             salary_first = self.salary.split(" - ")
             salary_second = other.salary.split(" - ")
-            avg_salary_first = sum(map(int,salary_first))/len(salary_first)
-            avg_salary_second = sum(map(int,salary_second)) / len(salary_second)
+            avg_salary_first = sum(map(int, salary_first)) / len(salary_first)
+            avg_salary_second = sum(map(int, salary_second)) / len(salary_second)
             print(avg_salary_first)
             print(avg_salary_second)
             return avg_salary_first < avg_salary_second

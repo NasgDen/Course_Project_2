@@ -10,16 +10,15 @@ class FileBaseClass(ABC):
 
     @abstractmethod
     def add_vacancy(self, *args, **kwargs):
-        """ Метод записи данных в файл"""
+        """Метод записи данных в файл"""
         pass
 
     @abstractmethod
     def read_vacancy(self, *args, **kwargs):
-        """ Метод чтения данных из файла """
+        """Метод чтения данных из файла"""
         pass
 
     @abstractmethod
     def delete_vacancy(self, *args, **kwargs):
-        """ Метод удаления данных из файла"""
+        """Метод удаления данных из файла"""
         pass
-

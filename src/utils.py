@@ -1,4 +1,5 @@
 import json
+
 from src.vacancy import Vacancy
 
 
@@ -8,8 +9,8 @@ def write_json_file(data, file_name: str) -> None:
         json.dump(data, file, ensure_ascii=False, indent=4)
 
 
-def convert_object_to_dict(vacancies):
-    """ Конвертация объектов класса Vacancy в список словарей """
+def convert_object_to_dict(vacancies: list[Vacancy]) -> list[dict]:
+    """Конвертация объектов класса Vacancy в список словарей"""
     list_json = []
     if isinstance(vacancies, list):
         for data in vacancies:
@@ -36,7 +37,7 @@ def convert_object_to_dict(vacancies):
 
 
 def filter_vacancies(vacancy: list[Vacancy], filter_words: list[str]) -> list[Vacancy]:
-    """ Функция фильтрует список вакансий по заданым словам в наименовании вакансии"""
+    """Функция фильтрует список вакансий по заданым словам в наименовании вакансии"""
     vacancies = []
     for word in filter_words:
         vacancy_filter = filter(lambda x: word.lower() in x.name.lower(), vacancy)
@@ -45,30 +46,39 @@ def filter_vacancies(vacancy: list[Vacancy], filter_words: list[str]) -> list[Va
 
 
 def get_vacancies_by_salary(vacancy: list[Vacancy], salary_range: list):
-    """ Функция фильтрует список вакансий по диапазону зарплат"""
-    if len(salary_range) != 1 and salary_range[0].isdigit() and salary_range[1].isdigit():
-        vacancy_filter = filter(lambda x: (salary_range[0] <= (x.salary.split(" - "))[0]) and (salary_range[1] >= (x.salary.split(" - "))[1]), vacancy)
+    """Функция фильтрует список вакансий по диапазону зарплат"""
+    if (
+        len(salary_range) != 1
+        and salary_range[0].isdigit()
+        and salary_range[1].isdigit()
+    ):
+        vacancy_filter = filter(
+            lambda x: (salary_range[0] <= (x.salary.split(" - "))[0])
+            and (salary_range[1] >= (x.salary.split(" - "))[1]),
+            vacancy,
+        )
     return vacancy_filter
 
 
-def sort_vacancies(vacancy: list[Vacancy]):
-    """ Функция сортирует список вакансий по минимальной зарплате по убыванию"""
+def sort_vacancies(vacancy: list[Vacancy]) -> list[Vacancy]:
+    """Функция сортирует список вакансий по минимальной зарплате по убыванию"""
 
-    vacancy_sorted = sorted(vacancy, key=lambda p: p.salary.split(" - ")[0], reverse=True)
+    vacancy_sorted = sorted(
+        vacancy, key=lambda p: p.salary.split(" - ")[0], reverse=True
+    )
     print(f"Найдено и отсортировано вакансий: {len(vacancy_sorted)} шт.")
     return vacancy_sorted
 
+
 def get_top_vacancies(vacancy: list[Vacancy], top_n):
+    """Функция получает заданное количество вакансий"""
     if len(vacancy) < top_n:
         return vacancy
     else:
         return vacancy[:top_n]
 
 
-def print_vacancies(vacancy: list[Vacancy]):
-    """ Вывод информации о вакансиях в консоль """
-
+def print_vacancies(vacancy: list[Vacancy]) -> None:
+    """Вывод информации о вакансиях в консоль"""
     for vac in vacancy:
         print(vac)
-
-

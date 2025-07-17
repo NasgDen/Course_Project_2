@@ -1,7 +1,9 @@
 from src.head_hunter_api import HeadHunterAPI
 from src.json_sever import JSONSaver
+from src.utils import (filter_vacancies, get_top_vacancies,
+                       get_vacancies_by_salary, print_vacancies,
+                       sort_vacancies)
 from src.vacancy import Vacancy
-from src.utils import filter_vacancies, get_vacancies_by_salary, sort_vacancies, get_top_vacancies, print_vacancies
 
 
 def main():
@@ -51,6 +53,7 @@ def main():
 
     # Вывод информации о вакансиях в консоль
     print_vacancies(top_vacancies)
+
 
 if __name__ == "__main__":
     main()
