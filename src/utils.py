@@ -40,7 +40,11 @@ def filter_vacancies(vacancy: list[Vacancy], filter_words: list[str]) -> list[Va
     """Функция фильтрует список вакансий по заданым словам в наименовании вакансии"""
     vacancies = []
     for word in filter_words:
-        vacancy_filter = filter(lambda x: word.lower() in x.name.lower(), vacancy)
+        vacancy_filter = filter(lambda x: word.lower() in x.name.lower() or
+                                          word.lower() in x.requirement.lower() or
+                                          word.lower() in x.responsibility.lower() or
+                                          word.lower() in x.company.lower() or
+                                          word.lower() in x.address.lower(), vacancy)
         vacancies.extend(vacancy_filter)
     return vacancies
 
