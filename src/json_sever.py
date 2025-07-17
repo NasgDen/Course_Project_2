@@ -15,7 +15,6 @@ class JSONSaver(FileBaseClass):
 
     def __init__(self, filename=PATH_TO_FILE):
         self.__filename = os.path.join(filename)
-        print(self.__filename)
 
     def write_vacancy(self, vacancies: list[Vacancy]) -> None:
         """Метод сохраняет список вакансий в файл формата JSON"""
@@ -28,7 +27,6 @@ class JSONSaver(FileBaseClass):
         """Метод записи данных в файл формата JSON"""
 
         data_json = self.read_vacancy()
-
         list_json = convert_object_to_dict(vacancy)
 
         index = 0
@@ -40,7 +38,6 @@ class JSONSaver(FileBaseClass):
         if index == 0:
             data_json.extend(list_json)
             print("Вакансия добавлена")
-            print(data_json)
 
         with open(self.__filename, mode="w", encoding="utf-8") as file:
             json.dump(data_json, file, indent=4, ensure_ascii=False)

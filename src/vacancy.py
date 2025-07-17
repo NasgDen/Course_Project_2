@@ -1,3 +1,6 @@
+import re
+
+
 class Vacancy:
     name: str  # наименование вакансии
     url: str  # ссылка на вакансию
@@ -20,7 +23,7 @@ class Vacancy:
         self, name, url, salary, requirement, responsibility, company, address
     ):
         self.name = name
-        self.url = url
+        self.url = self.url_validate(url)
         self.salary = salary
         self.requirement = requirement
         self.responsibility = responsibility
@@ -35,6 +38,19 @@ class Vacancy:
 Обязанности: {self.responsibility}
 Компания: {self.company}
 Адрес: {self.address} """
+
+    def __lt__(self, other) -> bool:
+        """Метод сравнения атрибута класса 'зарплата'"""
+        if isinstance(other, Vacancy):
+            salary_first = self.salary.split(" - ")
+            salary_second = other.salary.split(" - ")
+            avg_salary_first = sum(map(int, salary_first)) / len(salary_first)
+            avg_salary_second = sum(map(int, salary_second)) / len(salary_second)
+            print(avg_salary_first)
+            print(avg_salary_second)
+            return avg_salary_first < avg_salary_second
+        else:
+            raise TypeError("Неверный тип данных")
 
     @classmethod
     def cast_to_object_list(cls, vacancies) -> list:
@@ -67,15 +83,12 @@ class Vacancy:
             )
         return vacancies_list
 
-    def __lt__(self, other) -> bool:
-        """Метод сравнения атрибута класса 'зарплата'"""
-        if isinstance(other, Vacancy):
-            salary_first = self.salary.split(" - ")
-            salary_second = other.salary.split(" - ")
-            avg_salary_first = sum(map(int, salary_first)) / len(salary_first)
-            avg_salary_second = sum(map(int, salary_second)) / len(salary_second)
-            print(avg_salary_first)
-            print(avg_salary_second)
-            return avg_salary_first < avg_salary_second
+    @staticmethod
+    def url_validate(url):
+        """ Валидация url ссылка на вакансию"""
+        pattern = r"https://hh.ru/vacancy/\d+"
+        if re.match(pattern, url) is None:
+            print(f"Неправильная ссылка на ваканси: {url}")
+            return ""
         else:
-            raise TypeError("Неверный тип данных")
+            return url
