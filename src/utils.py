@@ -35,11 +35,13 @@ def convert_object_to_dict(vacancies):
     return list_json
 
 
-def filter_vacancies(vacancy: list[Vacancy], filter_words: str):
-    """ Функция фильтрует список вакансий по заданым словам"""
-
-    vacancy_filter = filter(lambda x: filter_words in x.name, vacancy)
-    return vacancy_filter
+def filter_vacancies(vacancy: list[Vacancy], filter_words: list[str]) -> list[Vacancy]:
+    """ Функция фильтрует список вакансий по заданым словам в наименовании вакансии"""
+    vacancies = []
+    for word in filter_words:
+        vacancy_filter = filter(lambda x: word.lower() in x.name.lower(), vacancy)
+        vacancies.extend(vacancy_filter)
+    return vacancies
 
 
 def get_vacancies_by_salary(vacancy: list[Vacancy], salary_range: list):

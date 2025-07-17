@@ -36,7 +36,7 @@ def main():
     # json_saver.delete_vacancy(vacancy)
 
     # Фильтрация вакансий
-    filter_words = input("Введите ключевые слова для фильтрации вакансий: ")
+    filter_words = input("Введите ключевые слова для фильтрации вакансий: ").split()
     filtered_vacancies = filter_vacancies(vacancies_list, filter_words)
 
     salary_range = input("Введите диапазон зарплат: ").split(" - ")
