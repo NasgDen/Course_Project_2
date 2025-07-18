@@ -13,3 +13,44 @@ def test_init_vacation(new_vacation):
 def test_lt_vacation(list_vacation):
     assert list_vacation[0] > list_vacation[1]
 
+def test_cast_to_object_list():
+    response = {"items":
+                  [{"name": "name",
+                   "alternate_url": "https://hh.ru/vacancy/122842251",
+                   "salary":
+                       {
+                           "from": "10",
+                           "to": "50"
+                       },
+                   "snippet":
+                       {
+                            "requirement": "requirement",
+                            "responsibility": "responsibility"
+                       },
+                   "employer":
+                       {
+                           "name": "name"
+                       },
+                   "address":
+                       {
+                           "raw": "raw"
+                       }
+                   }]
+    }
+    result = [Vacancy(
+        "name",
+        "https://hh.ru/vacancy/122842251",
+        "10 - 50",
+        "requirement",
+        "responsibility",
+        "name",
+        "raw"
+    )]
+    vacancy_list = Vacancy.cast_to_object_list(response)
+    assert vacancy_list[0].name == result[0].name
+    assert vacancy_list[0].url == result[0].url
+    assert vacancy_list[0].salary == result[0].salary
+    assert vacancy_list[0].requirement == result[0].requirement
+    assert vacancy_list[0].responsibility == result[0].responsibility
+    assert vacancy_list[0].company == result[0].company
+    assert vacancy_list[0].address == result[0].address
