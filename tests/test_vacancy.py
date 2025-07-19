@@ -7,36 +7,13 @@ def test_init_vacation(new_vacation):
     assert new_vacation.requirement == "Требования: опыт работы от 3 лет..."
     assert new_vacation.responsibility == "ответственность"
     assert new_vacation.company == "Компания"
-    assert new_vacation.address == "Адрес"
+    assert new_vacation.address == "Адрес 4321"
 
 
 def test_lt_vacation(list_vacation):
     assert list_vacation[0] > list_vacation[1]
 
-def test_cast_to_object_list():
-    response = {"items":
-                  [{"name": "name",
-                   "alternate_url": "https://hh.ru/vacancy/122842251",
-                   "salary":
-                       {
-                           "from": "10",
-                           "to": "50"
-                       },
-                   "snippet":
-                       {
-                            "requirement": "requirement",
-                            "responsibility": "responsibility"
-                       },
-                   "employer":
-                       {
-                           "name": "name"
-                       },
-                   "address":
-                       {
-                           "raw": "raw"
-                       }
-                   }]
-    }
+def test_cast_to_object_list(response):
     result = [Vacancy(
         "name",
         "https://hh.ru/vacancy/122842251",
