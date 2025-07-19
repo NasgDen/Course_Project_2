@@ -2,5 +2,5 @@ from src.json_sever import JSONSaver
 from unittest.mock import patch
 
 
-def test_json_sever_init():
+def test_write_vacancy(new_vacation):
     pass
