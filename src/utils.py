@@ -29,7 +29,7 @@ def convert_object_to_dict(vacancies: list[Vacancy]) -> list[dict]:
 
 
 def filter_vacancies(vacancy: list[Vacancy], filter_words: list[str]) -> list[Vacancy]:
-    """Функция фильтрует список вакансий по заданым словам в наименовании вакансии"""
+    """Функция фильтрует список вакансий по заданным словам в наименовании вакансии"""
     vacancies: list
     vacancies = []
     for word in filter_words:

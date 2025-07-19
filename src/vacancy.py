@@ -2,6 +2,7 @@ import re
 
 
 class Vacancy:
+    """ Класс для работы с вакансиями """
     name: str  # наименование вакансии
     url: str  # ссылка на вакансию
     salary: str  # зарплата
