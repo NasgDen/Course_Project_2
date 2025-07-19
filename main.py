@@ -19,6 +19,7 @@ def main():
 
     # Преобразование набора данных из JSON в список объектов
     vacancies_list = Vacancy.cast_to_object_list(hh_vacancies)
+    print(f"Количество вокансий: {len(vacancies_list)}")
 
     # Сохранения списка вакансий в файл формата JSON
     json_saver = JSONSaver()

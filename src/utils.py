@@ -48,9 +48,11 @@ def get_vacancies_by_salary(vacancy: list[Vacancy], salary_range: list):
         and salary_range[0].isdigit()
         and salary_range[1].isdigit()
     ):
+        print(salary_range[0])
+        print(salary_range[1])
         vacancy_filter = filter(
-            lambda x: (salary_range[0] <= (x.salary.split(" - "))[0])
-            and (salary_range[1] >= (x.salary.split(" - "))[1]),
+            lambda x: (int(salary_range[0]) <= (int(x.salary.split(" - ")[0])))
+            and (int(salary_range[1]) >= (int(x.salary.split(" - ")[1]))),
             vacancy,
         )
     return vacancy_filter

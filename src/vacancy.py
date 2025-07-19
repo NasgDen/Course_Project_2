@@ -63,16 +63,22 @@ class Vacancy:
                 if vacancy.get("salary").get("from") is not None:
                     salary_from = vacancy.get("salary").get("from")
                 else:
-                    salary_from = ""
+                    salary_from = "0"
                 if vacancy.get("salary").get("to") is not None:
                     salary_to = vacancy.get("salary").get("to")
                 else:
-                    salary_to = ""
+                    salary_to = "0"
                 salary = f"{salary_from} - {salary_to}"
             else:
                 salary = "0 - 0"
-            requirement = vacancy.get("snippet").get("requirement")
-            responsibility = vacancy.get("snippet").get("responsibility")
+            if  vacancy.get("snippet").get("requirement") is not None:
+                requirement = vacancy.get("snippet").get("requirement")
+            else:
+                requirement = ""
+            if vacancy.get("snippet").get("responsibility") is not None:
+                responsibility = vacancy.get("snippet").get("responsibility")
+            else:
+                responsibility = ""
             company = vacancy.get("employer").get("name")
             if vacancy.get("address") is not None:
                 address = f"{vacancy.get("address").get("raw")}"
