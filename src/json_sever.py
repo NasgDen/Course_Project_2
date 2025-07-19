@@ -47,7 +47,7 @@ class JSONSaver(FileBaseClass):
         try:
             with open(self.__filename, mode="r", encoding="utf-8") as file:
                 data_json = json.load(file)
-        except FileNotFoundError as err:
+        except FileNotFoundError:
             data_json = []
         return data_json
 
@@ -60,8 +60,8 @@ class JSONSaver(FileBaseClass):
         index = 0
         delet_data = {}
         for data in data_json:
-            for vacancy in list_json:
-                if data.get("name") == vacancy.get("name"):
+            for vac in list_json:
+                if data.get("name") == vac.get("name"):
                     delet_data = data_json.pop(index)
                 else:
                     index += 1

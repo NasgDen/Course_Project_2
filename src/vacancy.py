@@ -71,7 +71,7 @@ class Vacancy:
                 salary = f"{salary_from} - {salary_to}"
             else:
                 salary = "0 - 0"
-            if  vacancy.get("snippet").get("requirement") is not None:
+            if vacancy.get("snippet").get("requirement") is not None:
                 requirement = vacancy.get("snippet").get("requirement")
             else:
                 requirement = ""
@@ -91,7 +91,7 @@ class Vacancy:
 
     @staticmethod
     def url_validate(url):
-        """ Валидация url ссылка на вакансию"""
+        """Валидация url ссылка на вакансию"""
         pattern = r"https://hh.ru/vacancy/\d+"
         if re.match(pattern, url) is None:
             print(f"Неправильная ссылка на ваканси: {url}")

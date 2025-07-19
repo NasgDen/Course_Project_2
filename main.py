@@ -61,5 +61,6 @@ def main():
     # Удаление вакансий из файла формата JSON
     json_saver.delete_vacancy(vacancy)
 
+
 if __name__ == "__main__":
     main()

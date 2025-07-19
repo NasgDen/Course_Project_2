@@ -1,8 +1,7 @@
 import json
-
+from unittest.mock import patch
 
 from src.json_sever import JSONSaver
-from unittest.mock import patch
 
 
 @patch("json.dump")

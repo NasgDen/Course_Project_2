@@ -30,13 +30,17 @@ def convert_object_to_dict(vacancies: list[Vacancy]) -> list[dict]:
 
 def filter_vacancies(vacancy: list[Vacancy], filter_words: list[str]) -> list[Vacancy]:
     """Функция фильтрует список вакансий по заданым словам в наименовании вакансии"""
+    vacancies: list
     vacancies = []
     for word in filter_words:
-        vacancy_filter = filter(lambda x: word.lower() in x.name.lower() or
-                                          word.lower() in x.requirement.lower() or
-                                          word.lower() in x.responsibility.lower() or
-                                          word.lower() in x.company.lower() or
-                                          word.lower() in x.address.lower(), vacancy)
+        vacancy_filter = filter(
+            lambda x: word.lower() in x.name.lower()
+            or word.lower() in x.requirement.lower()
+            or word.lower() in x.responsibility.lower()
+            or word.lower() in x.company.lower()
+            or word.lower() in x.address.lower(),
+            vacancy,
+        )
         vacancies.extend(vacancy_filter)
     return vacancies
 
@@ -48,8 +52,6 @@ def get_vacancies_by_salary(vacancy: list[Vacancy], salary_range: list):
         and salary_range[0].isdigit()
         and salary_range[1].isdigit()
     ):
-        print(salary_range[0])
-        print(salary_range[1])
         vacancy_filter = filter(
             lambda x: (int(salary_range[0]) <= (int(x.salary.split(" - ")[0])))
             and (int(salary_range[1]) >= (int(x.salary.split(" - ")[1]))),

@@ -7,7 +7,7 @@ class HeadHunterAPI(BaseApiClass):
     """Класс для работы с api.hh.ru"""
 
     __url = "https://api.hh.ru/vacancies"
-    __params = {}
+    __params: dict = {}
 
     def __init__(self):
         """Инициализация атрибутов класса"""
